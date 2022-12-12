@@ -1,15 +1,21 @@
 import { useRef } from 'react';
-import '../styles/login.css';
+import { useNavigate } from 'react-router-dom';
+import '../pageStyles/login.css';
 
 const Login = () => {
 
     const emailRef = useRef();
     const passwordRef = useRef();
+    let navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+        if (email === 'test@gmail.com' && password === 'test') {
+            navigate('/');
+        }
+
 
     }
     return (
