@@ -1,0 +1,59 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    background-color: var(--primaryColor);
+    color: white;
+    padding: 20px;
+    padding-top: 40px;
+
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar button {
+    color: white;
+    margin-top: 10px;
+    background-color: transparent;
+    padding: 10px;
+    padding-left: 15px;
+    font-size: 15px;
+    border: none;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.sidebar button:hover {
+    cursor: pointer;
+}
+
+.sidebar ul button:focus {
+    background-color: #323232;
+}
+
+.logout-container {
+    display: flex;
+    margin-bottom: 20%;
+}
+
+.logout-container svg {
+    height: 100%;
+    width: 22px;
+}
+
+
+.logout-container button {
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.logout-container:hover {
+    cursor: pointer;
+}

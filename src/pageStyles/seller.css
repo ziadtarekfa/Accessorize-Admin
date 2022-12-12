@@ -1,5 +1,4 @@
-/* .seller hr {
-
-    background-color: #272727;
-    height: 4px;
-} */
+.seller>div {
+    display: flex;
+    height: calc(100vh - 66px);
+}
