@@ -5,7 +5,9 @@
   font-family: sans-serif;
 }
 
-body {}
+body {
+  background-color: var(--primaryColor);
+}
 
 :root {
   --primaryColor: #1C1C1C;
