@@ -1,9 +1,14 @@
 import { AiOutlineSearch } from 'react-icons/ai';
 import { GoTrashcan } from 'react-icons/go';
 import { AiOutlineEye } from 'react-icons/ai';
+import { BiEdit } from 'react-icons/bi';
 import avatar from '../assets/avatar.jpg';
 import '../componentStyles/view-table.css';
+import { useState } from 'react';
+import EditDataModal from './EditDataModal';
 const ViewTable = ({ text }) => {
+
+    const [isEdit, setIsEdit] = useState(false);
     return (
         <>
             <div className='search-container'>
@@ -11,7 +16,6 @@ const ViewTable = ({ text }) => {
                 <AiOutlineSearch fill='#757575' />
                 <button>Delete {text}</button>
             </div>
-
 
             <table>
                 <thead>
@@ -32,12 +36,19 @@ const ViewTable = ({ text }) => {
                         <td >ziadtarekfa@gmail.com</td>
                         <td >+201066324579</td>
                         <td >Male</td>
-                        <td>
+                        {/* <td>
                             <AiOutlineEye size='25px' />
+                        </td> */}
+                        <td>
+                            <BiEdit size='25px' onClick={() => {
+                                console.log('hello');
+                                setIsEdit(true);
+                            }} />
                         </td>
                         <td>
                             <GoTrashcan size='20px' />
                         </td>
+
                     </tr>
                 </tbody>
             </table>
@@ -50,6 +61,8 @@ const ViewTable = ({ text }) => {
                 <button>5</button>
                 <button>{'>'}</button>
             </div>
+            {isEdit && <EditDataModal setIsEdit={setIsEdit} />}
+
         </>
     );
 }

@@ -13,7 +13,7 @@ const Sidebar = () => {
             <ul>
                 <button onClick={() => {
                     navigate('/');
-                }}>Dashboard</button>
+                }}>DashBoard</button>
                 <button onClick={() => {
                     navigate('/manage-users');
                 }}>Manage Users</button>

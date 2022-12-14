@@ -1,0 +1,79 @@
+.bg-dark {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-modal {
+    background-color: var(--primaryColor);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 60%;
+    padding: 20px;
+    /* padding-left: 40px;
+    padding-right: 40px; */
+    border-radius: 10px;
+    justify-content: space-around;
+    /* background-color: red; */
+}
+
+.edit-modal>label {
+    font-size: 13px;
+}
+
+.edit-modal input {
+    border: none;
+    height: 35px;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
+.edit-modal>div {
+    display: flex;
+    justify-content: end;
+    margin-top: 40px;
+}
+
+.edit-modal select {
+    background-color: var(--secondaryColor);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    padding: 10px;
+    width: 20%;
+    outline: none;
+    margin-right: 20px;
+}
+
+.save-changes-btn {
+    background-color: #5B35D5;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 40%;
+    outline: none;
+    border: none
+}
+
+.cancel-btn,
+.save-changes-btn:hover {
+    cursor: pointer;
+}
