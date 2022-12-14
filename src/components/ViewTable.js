@@ -6,9 +6,11 @@ import avatar from '../assets/avatar.jpg';
 import '../componentStyles/view-table.css';
 import { useState } from 'react';
 import EditDataModal from './EditDataModal';
+import DeleteModal from './DeleteModal';
 const ViewTable = ({ text }) => {
 
     const [isEdit, setIsEdit] = useState(false);
+    const [isDelete, setIsDelete] = useState(false);
     return (
         <>
             <div className='search-container'>
@@ -41,12 +43,13 @@ const ViewTable = ({ text }) => {
                         </td> */}
                         <td>
                             <BiEdit size='25px' onClick={() => {
-                                console.log('hello');
                                 setIsEdit(true);
                             }} />
                         </td>
                         <td>
-                            <GoTrashcan size='20px' />
+                            <GoTrashcan size='20px' onClick={() => {
+                                setIsDelete(true);
+                            }} />
                         </td>
 
                     </tr>
@@ -62,6 +65,7 @@ const ViewTable = ({ text }) => {
                 <button>{'>'}</button>
             </div>
             {isEdit && <EditDataModal setIsEdit={setIsEdit} />}
+            {isDelete && <DeleteModal setIsDelete={setIsDelete} />}
 
         </>
     );
