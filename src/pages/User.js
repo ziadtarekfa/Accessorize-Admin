@@ -1,12 +1,14 @@
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import '../pageStyles/user.css';
-import { BsBarChartLineFill } from 'react-icons/bs';
-import { GiProgression } from 'react-icons/gi'
+
+
 import { AiOutlineSearch } from 'react-icons/ai';
 import { GoTrashcan } from 'react-icons/go';
 import { AiOutlineEye } from 'react-icons/ai';
 import avatar from '../assets/avatar.jpg';
+import CurrentStats from '../components/CurrentStats';
+import NewStats from '../components/NewStats';
 
 const User = () => {
     return (
@@ -16,20 +18,8 @@ const User = () => {
                 <Sidebar />
                 <div className='user-content'>
                     <div className='user-stats'>
-                        <div className='users current-users'>
-                            <h3>Current Users</h3>
-                            <div className='chart-container'>
-                                <BsBarChartLineFill />
-                                <span>7</span>
-                            </div>
-                        </div>
-                        <div className='users new-users'>
-                            <h3>New Users</h3>
-                            <div className='chart-container'>
-                                <GiProgression />
-                                <span>20</span>
-                            </div>
-                        </div>
+                        <CurrentStats />
+                        <NewStats />
                     </div>
                     <p>Users</p>
                     <div className='search-container'>
