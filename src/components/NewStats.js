@@ -1,12 +1,12 @@
 import { GiProgression } from 'react-icons/gi';
 import '../componentStyles/stats.css';
-const NewStats = () => {
+const NewStats = ({ text, quantity }) => {
     return (
         <div className='users new-users'>
-            <h3>New Users</h3>
+            <h3>{text}</h3>
             <div className='chart-container'>
                 <GiProgression />
-                <span>20</span>
+                <span>{quantity}</span>
             </div>
         </div>
     );

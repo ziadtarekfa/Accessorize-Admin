@@ -3,13 +3,13 @@ import { GoTrashcan } from 'react-icons/go';
 import { AiOutlineEye } from 'react-icons/ai';
 import avatar from '../assets/avatar.jpg';
 import '../componentStyles/view-table.css';
-const ViewTable = () => {
+const ViewTable = ({ text }) => {
     return (
         <>
             <div className='search-container'>
                 <input placeholder='Search'></input>
                 <AiOutlineSearch fill='#757575' />
-                <button>Delete User</button>
+                <button>Delete {text}</button>
             </div>
 
 

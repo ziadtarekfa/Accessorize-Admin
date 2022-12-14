@@ -1,12 +1,12 @@
 import { BsBarChartLineFill } from 'react-icons/bs';
 import '../componentStyles/stats.css';
-const CurrentStats = () => {
+const CurrentStats = ({ text, quantity }) => {
     return (
         <div className='users current-users'>
-            <h3>Current Users</h3>
+            <h3>{text}</h3>
             <div className='chart-container'>
                 <BsBarChartLineFill />
-                <span>7</span>
+                <span>{quantity}</span>
             </div>
         </div>
     );
