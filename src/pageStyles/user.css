@@ -98,3 +98,27 @@ table svg:hover {
     cursor: pointer;
     color: white;
 }
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 80%;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 8px 14px 8px 14px;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    cursor: pointer;
+}
+
+.pagination button:focus {
+    background-color: #272727;
+}
