@@ -4,13 +4,111 @@ import { AiOutlineEye } from 'react-icons/ai';
 import { BiEdit } from 'react-icons/bi';
 import avatar from '../assets/avatar.jpg';
 import '../componentStyles/view-table.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import EditDataModal from './EditDataModal';
 import DeleteModal from './DeleteModal';
+import Pagination from './Pagination';
 const ViewTable = ({ text }) => {
 
     const [isEdit, setIsEdit] = useState(false);
     const [isDelete, setIsDelete] = useState(false);
+    const NO_OF_USERS_PER_PAGE = 5;
+
+    const [totalUsers, setTotalUsers] = useState([
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+
+        },
+        {
+            name: "Ziad Tarek",
+            email: "ziadtarekfa@gmail.com",
+            phoneNo: "+201066324579",
+            gender: "Male",
+        }
+    ]);
+
+    const [pageNumber, setPageNumber] = useState(1);
+    const [currentUsers, setCurrentUsers] = useState([]);
+
+    useEffect(() => {
+        const indexOfLastUser = pageNumber * NO_OF_USERS_PER_PAGE;
+        const indexOfFirstUser = indexOfLastUser - NO_OF_USERS_PER_PAGE;
+        setCurrentUsers(totalUsers.slice(indexOfFirstUser, indexOfLastUser));
+    }, [pageNumber, totalUsers])
+
+
     return (
         <>
             <div className='search-container'>
@@ -30,40 +128,36 @@ const ViewTable = ({ text }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td style={{ 'textAlign': 'center' }}>
-                            <img src={avatar} alt='profile' className='avatar' />
-                        </td>
-                        <td >Ziad Tarek Farouk</td>
-                        <td >ziadtarekfa@gmail.com</td>
-                        <td >+201066324579</td>
-                        <td >Male</td>
-                        {/* <td>
-                            <AiOutlineEye size='25px' />
-                        </td> */}
-                        <td>
-                            <BiEdit size='25px' onClick={() => {
-                                setIsEdit(true);
-                            }} />
-                        </td>
-                        <td>
-                            <GoTrashcan size='20px' onClick={() => {
-                                setIsDelete(true);
-                            }} />
-                        </td>
+                    {
+                        currentUsers.map((user) => {
+                            return (
+                                <tr>
+                                    <td style={{ 'textAlign': 'center' }}>
+                                        <img src={avatar} alt='profile' className='avatar' />
+                                    </td>
+                                    <td >{user.name}</td>
+                                    <td >{user.email}</td>
+                                    <td >{user.phoneNo}</td>
+                                    <td >{user.gender}</td>
+                                    <td>
+                                        <BiEdit size='25px' onClick={() => {
+                                            setIsEdit(true);
+                                        }} />
+                                    </td>
+                                    <td>
+                                        <GoTrashcan size='20px' onClick={() => {
+                                            setIsDelete(true);
+                                        }} />
+                                    </td>
 
-                    </tr>
+                                </tr>
+                            );
+                        })
+                    }
                 </tbody>
             </table>
-            <div className='pagination'>
-                <button>{'<'}</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>{'>'}</button>
-            </div>
+            <Pagination totalUsers={totalUsers} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+
             {isEdit && <EditDataModal setIsEdit={setIsEdit} />}
             {isDelete && <DeleteModal setIsDelete={setIsDelete} />}
 

@@ -11,7 +11,7 @@
 }
 
 .edit-modal {
-    background-color: var(--primaryColor);
+    background-color: var(--secondaryColor);
     color: white;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
 .edit-modal input {
     border: none;
     height: 35px;
-    background-color: var(--secondaryColor);
+    background-color: var(--primaryColor);
     border-radius: 5px;
     padding: 10px;
     color: white;
@@ -45,7 +45,7 @@
 }
 
 .edit-modal select {
-    background-color: var(--secondaryColor);
+    background-color: var(--primaryColor);
     color: white;
     border-radius: 5px;
     padding: 10px;
