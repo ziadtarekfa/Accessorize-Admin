@@ -1,13 +1,13 @@
 .users {
     color: var(--primaryColor);
-    padding: 30px;
     border-radius: 10px;
+    padding: 30px;
     width: 20%;
 }
 
 .chart-container {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .chart-container span {
@@ -15,17 +15,11 @@
     margin: 15px 0 0 14px;
 }
 
-.chart-container svg {
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
-}
-
 .current-users {
-    background-color: #E3F5FF;
+    background-color: var(--primaryCardColor);
 }
 
 .new-users {
-    background-color: #E5ECF6;
+    background-color: var(--secondaryCardColor);
     margin-left: 40px;
 }

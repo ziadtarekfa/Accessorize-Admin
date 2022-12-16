@@ -1,17 +1,24 @@
 import '../componentStyles/edit-modal.css';
-const EditDataModal = ({ setIsEdit }) => {
+const EditDataModal = ({ setIsEdit, user }) => {
+
+
+    const editUser = (e) => {
+        e.preventDefault();
+        setIsEdit(false);
+    }
+
     return (
         <div className="bg-dark">
-            <div className="edit-modal">
+            <form className="edit-modal" onSubmit={editUser}>
                 <h3>Edit User Data</h3>
                 <label style={{ 'marginTop': '20px' }}>Name</label>
-                <input></input>
+                <input required value={user.name}></input>
                 <label>Email Address</label>
-                <input></input>
+                <input required type='email' value={user.email}></input>
                 <label>Phone No</label>
-                <input></input>
+                <input required value={user.phoneNo}></input>
                 <label>Gender</label>
-                <select>
+                <select value={user.gender}>
                     <option>Male</option>
                     <option>Female</option>
                 </select>
@@ -19,7 +26,8 @@ const EditDataModal = ({ setIsEdit }) => {
                     <button onClick={() => setIsEdit(false)} className='cancel-btn'>Cancel</button>
                     <button className='save-changes-btn'>Save Changes</button>
                 </div>
-            </div>
+
+            </form>
 
         </div>
     );

@@ -1,52 +1,45 @@
 .delete-modal {
     background-color: var(--secondaryColor);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     width: 25%;
     height: 40%;
     justify-content: space-around;
-    padding: 20px;
-    padding-top: 40px;
-    border-radius: 10px;
+    padding: 40px 20px 20px 20px;
 }
 
 .delete-modal p {
     text-align: center;
 }
 
-
 .delete-modal>:first-child {
+    /* First Paragraph */
     color: white;
 }
 
 .delete-modal>:nth-child(2) {
-    color: #777777;
+    /* Second Paragraph */
+    color: var(--lightGrayColor);
 
 }
 
 .delete-modal hr {
     border: none;
-    border-bottom: 2px solid #777777;
+    border-bottom: 2px solid var(--lightGrayColor);
 
 }
 
-.delete-modal>div {
+.delete-cancel-container {
     display: flex;
     justify-content: end;
-
-
 }
 
 .delete-btn {
     background-color: #F2257A;
-    color: white;
     border-radius: 5px;
+    border: none;
+    color: white;
     padding: 10px;
     width: 40%;
-    outline: none;
-    border: none
-}
-
-.delete-btn:hover {
-    cursor: pointer;
 }

@@ -1,45 +1,31 @@
 .search-container {
-    padding: 10px;
     border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--secondaryColor);
+    padding: 10px;
     margin-top: 10px;
 }
 
 .search-container input {
-    border: 1px solid #515151;
-    outline: none;
-    color: white;
     background-color: var(--secondaryColor);
+    border: 1px solid var(--lightGrayColor);
     border-radius: 20px;
-    padding: 5px;
-    padding-left: 30px;
+    color: white;
+    padding: 5px 5px 5px 30px;
+    outline: none;
     width: 25%;
 }
 
 .search-container svg {
     position: relative;
-    right: 57%;
-    top: 6px;
+    right: 24.2%;
+    top: 3.5px;
 }
 
 .search-container button {
+    background-color: var(--primaryCardColor);
     border: none;
-    background-color: var(--secondaryColor);
-    padding: 5px;
-    color: var(--secondaryColor);
-    background-color: #E3F5FF;
     border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-
+    padding: 5px 10px;
 }
-
-.search-container button:hover {
-    cursor: pointer;
-}
-
 
 table {
     width: 100%;
@@ -48,13 +34,13 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid #777777;
+    border-bottom: 1px solid var(--lightGrayColor);
 
 }
 
+table svg,
 thead {
-
-    color: #777777;
+    color: var(--lightGrayColor);
 }
 
 td {
@@ -69,16 +55,11 @@ th {
 }
 
 table img {
-    width: 30px;
-    height: 30px;
     border-radius: 50px;
-}
-
-table svg {
-    color: #777777;
+    width: 30px;
 }
 
 table svg:hover {
-    cursor: pointer;
     color: white;
+    cursor: pointer;
 }

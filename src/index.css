@@ -7,9 +7,25 @@
 
 body {
   background-color: var(--primaryColor);
+  color: white;
 }
 
 :root {
   --primaryColor: #1C1C1C;
   --secondaryColor: #282828;
+  --darkGrayColor: #323232;
+  --lightGrayColor: #777777;
+  --primaryCardColor: #E3F5FF;
+  --secondaryCardColor: #E5ECF6;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.container {
+
+  display: flex;
+  height: calc(100vh - 66px);
+
 }

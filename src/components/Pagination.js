@@ -1,5 +1,5 @@
 import '../componentStyles/pagination.css';
-const Pagination = ({ totalUsers, pageNumber, setPageNumber }) => {
+const Pagination = ({ totalUsers, currentPageNumber, setCurrentPageNumber }) => {
 
     const pageNumbers = [];
     const NO_OF_USERS_PER_PAGE = 5;
@@ -10,13 +10,13 @@ const Pagination = ({ totalUsers, pageNumber, setPageNumber }) => {
     }
 
     const getPreviousPage = () => {
-        if (pageNumber > 1) {
-            setPageNumber(pageNumber + -1)
+        if (currentPageNumber > 1) {
+            setCurrentPageNumber(currentPageNumber + -1)
         }
     }
     const getNextPage = () => {
-        if (pageNumber < Math.ceil(totalUsers.length / NO_OF_USERS_PER_PAGE)) {
-            setPageNumber(pageNumber + 1);
+        if (currentPageNumber < Math.ceil(totalUsers.length / NO_OF_USERS_PER_PAGE)) {
+            setCurrentPageNumber(currentPageNumber + 1);
         }
     }
 
@@ -25,10 +25,9 @@ const Pagination = ({ totalUsers, pageNumber, setPageNumber }) => {
             <button onClick={getPreviousPage} className='not-active'>{'<'}</button>
             {
                 pageNumbers.map((num) => {
-                    console.log(num + " " + pageNumber);
                     return (
-                        <button className={num === pageNumber ? 'active' : 'not-active'} key={`btn_${num}`} onClick={() => {
-                            setPageNumber(num);
+                        <button className={num === currentPageNumber ? 'active' : 'not-active'} key={`btn_${num}`} onClick={() => {
+                            setCurrentPageNumber(num);
                         }}>{num}</button>
                     )
 

@@ -1,41 +1,23 @@
-.sidebar {
+aside {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-right: 2px solid var(--darkGrayColor);
+    padding: 40px 10px 10px 10px;
     width: 17%;
-    background-color: var(--primaryColor);
-    color: white;
-    padding: 20px;
-    padding-top: 40px;
-    border-right: 2px solid #323232;
-
 }
 
-.sidebar ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.sidebar button {
-    color: white;
-    margin-top: 10px;
+aside button {
     background-color: transparent;
-    padding: 10px;
-    padding-left: 15px;
-    font-size: 15px;
     border: none;
     border-radius: 15px;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+    outline: none;
+    padding: 10px 10px 10px 15px;
     text-align: left;
-}
-
-.sidebar button:hover {
-    cursor: pointer;
-}
-
-.sidebar ul button:focus {
-    background-color: #323232;
+    width: 100%;
 }
 
 .logout-container {
@@ -43,15 +25,8 @@
     margin-bottom: 20%;
 }
 
-.logout-container svg {
-    height: 100%;
-    width: 22px;
-}
-
-
 .logout-container button {
-    margin: 0;
-    margin-left: 10px;
+    margin: 0 0 0 10px;
     padding: 0;
 }
 

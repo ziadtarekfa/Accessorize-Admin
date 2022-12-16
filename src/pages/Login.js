@@ -1,6 +1,6 @@
+import '../pageStyles/login.css';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../pageStyles/login.css';
 
 const Login = () => {
 
@@ -13,11 +13,10 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         if (email === 'test@gmail.com' && password === 'test') {
-            navigate('/');
+            navigate('/manage-sellers');
         }
-
-
     }
+
     return (
         <div className='login-container'>
 
@@ -31,8 +30,6 @@ const Login = () => {
                 <input type="password" required ref={passwordRef}></input>
                 <button>Sign In</button>
             </form>
-            {/* <img src={img} alt='background bars' className='bg-image' /> */}
-
         </div>
 
 

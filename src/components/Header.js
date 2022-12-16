@@ -1,18 +1,17 @@
-import { ReactComponent as Mirror } from '../assets/mirror.svg';
-import { ReactComponent as Male } from '../assets/male.svg';
 import '../componentStyles/header.css';
+import { ReactComponent as Mirror } from '../assets/mirror.svg';
 const Header = () => {
     return (
         <header>
             <div className='mirror-container'>
-                <Mirror fill='white' />
+                <Mirror fill='white' size='20px' />
                 <h2>Accessorize</h2>
             </div>
-            <div className='male-container'>
-                <Male fill='black' />
-            </div>
+            {/* name initials */}
+            <h1>ZT</h1>
 
-        </header>);
+        </header>
+    );
 }
 
 export default Header;

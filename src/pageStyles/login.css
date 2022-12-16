@@ -1,52 +1,43 @@
 .login-container {
-    background-color: var(--primaryColor);
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.login-container h1 {
-    color: white;
+    height: 90vh;
 }
 
 .login {
     background-color: white;
-    margin-top: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding: 4% 4% 0 4%;
-    height: 50%;
-    width: 40%;
     justify-content: space-between;
-    border-radius: 10px;
-}
-
-.login label {
-    color: #9F9F9F;
+    margin-top: 20px;
+    padding: 4% 4% 0 4%;
+    height: 55%;
+    width: 40%;
 }
 
 .login span {
     color: black;
 }
 
+.login label {
+    color: var(--lightGrayColor);
+}
+
 .login input {
     background-color: #F5F5F5;
     border: none;
-    height: 35px;
     border-radius: 5px;
+    height: 35px;
     padding: 10px;
 }
 
 .login button {
     background-color: var(--primaryColor);
+    border-radius: 10px;
     color: white;
     height: 40px;
-    border-radius: 10px;
     margin-bottom: 30px;
-}
-
-.login button:hover {
-    cursor: pointer;
 }
