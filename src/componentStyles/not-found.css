@@ -1,0 +1,21 @@
+#lottie-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+#lottie-container+div {
+    display: flex;
+    justify-content: center;
+}
+
+.not-found button {
+    background-color: #385CE0;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    font-size: 17px;
+    width: 30%;
+}
