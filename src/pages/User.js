@@ -12,10 +12,10 @@ const User = () => {
             <Sidebar />
             <div className='user-content'>
                 <div className='user-stats'>
-                    <CurrentStats text='Current Sellers' quantity='100' />
-                    <NewStats text='New Sellers' quantity='20' />
+                    <CurrentStats text='Current Users' quantity='100' />
+                    <NewStats text='New Users' quantity='20' />
                 </div>
-                <p>Sellers</p>
+                <p>Users</p>
                 <ViewTable />
 
             </div>

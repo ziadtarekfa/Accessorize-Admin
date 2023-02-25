@@ -10,7 +10,7 @@ const EditDataModal = ({ setIsEdit, user }) => {
     return (
         <div className="bg-dark">
             <form className="edit-modal" onSubmit={editUser}>
-                <h3>Edit User Data</h3>
+                <h3 style={{ 'marginTop': 10 }}>Edit User Data</h3>
                 <label style={{ 'marginTop': '20px' }}>Name</label>
                 <input required value={user.name}></input>
                 <label>Email Address</label>

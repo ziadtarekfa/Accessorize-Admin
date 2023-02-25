@@ -8,7 +8,7 @@ const Login = () => {
     const passwordRef = useRef();
     let navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const signIn = (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
@@ -18,21 +18,16 @@ const Login = () => {
     }
 
     return (
-        <div className='login-container'>
-
-            <h1>Accessorize Admin Login</h1>
-
-            <form className='login' onSubmit={handleLogin}>
-                <span>Please fill in your admin login details below</span>
-                <label>Email address</label>
-                <input type="email" required ref={emailRef}></input>
-                <label>Password</label>
-                <input type="password" required ref={passwordRef}></input>
-                <button>Sign In</button>
+        <main className="sign_in">
+            <div className="intro_text">
+                <h1>Sign In to <br /> admin accessorize</h1>
+            </div>
+            <form className="sign_in_container" onSubmit={signIn}>
+                <input id="email_sign_in" type="email" placeholder="Enter Email" ref={emailRef} required></input>
+                <input id="password_sign_in" type="password" placeholder="Password" ref={passwordRef} required></input>
+                <button className="default_button">Sign In</button>
             </form>
-        </div>
-
-
+        </main>
     );
 }
 
