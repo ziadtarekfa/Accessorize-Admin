@@ -1,34 +1,35 @@
 import '../componentStyles/sidebar.css';
 import { BiLogOut } from 'react-icons/bi'
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+
 const Sidebar = () => {
 
-    const [isManageUsersPath, setManageUsersPath] = useState();
     let navigate = useNavigate();
-
+    const activeStyle = {
+        backgroundColor: "#323232"
+    }
+    const notActiveStyle = {
+        backgroundColor: "transparent"
+    }
     const logout = () => {
         navigate('/');
     }
 
-    useEffect(() => {
-        if (window.location.pathname === '/manage-users') {
-            setManageUsersPath(true);
-        }
-        else {
-            setManageUsersPath(false);
-        }
-    }, []);
-
     return (
         <aside>
             <div className='manage-container'>
-                <button className={isManageUsersPath ? 'active' : ''} onClick={() => {
-                    navigate('/manage-users');
-                }}>Manage Users</button>
-                <button className={isManageUsersPath ? '' : 'active'} onClick={() => {
-                    navigate('/manage-sellers');
-                }}>Manage Sellers</button>
+                <NavLink to='/manage-users'
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : notActiveStyle
+                    }>
+                    Manage Users
+                </NavLink>
+                <NavLink to='/manage-sellers'
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : notActiveStyle
+                    }>
+                    Manage Sellers
+                </NavLink>
             </div>
             <div className='logout-container' onClick={logout}>
                 <BiLogOut size='25px' />
