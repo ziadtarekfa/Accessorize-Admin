@@ -20,7 +20,7 @@ const User = () => {
             return res.json();
         }).then((data) => {
             setRecentUsersCount(data);
-        })
+        });
     }, []);
 
     return (
