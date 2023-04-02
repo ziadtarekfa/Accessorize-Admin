@@ -13,7 +13,6 @@ const Seller = () => {
         fetch("http://localhost:8000/admin/sellersCount").then((res) => {
             return res.json();
         }).then((data) => {
-            console.log(data);
             setCurrentSellersCount(data.sellersCount);
         });
 

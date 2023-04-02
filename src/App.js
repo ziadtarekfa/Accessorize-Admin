@@ -15,8 +15,8 @@ function App() {
         <Header />
         <Routes>
 
-          <Route path='/manage-users' element={<User />} />
-          <Route path='/manage-sellers' element={<Seller />} />
+          <Route path='/users' element={<User />} />
+          <Route path='/sellers' element={<Seller />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>

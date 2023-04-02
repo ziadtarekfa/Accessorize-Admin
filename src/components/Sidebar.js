@@ -18,13 +18,13 @@ const Sidebar = () => {
     return (
         <aside>
             <div className='manage-container'>
-                <NavLink to='/manage-users'
+                <NavLink to='/users'
                     style={({ isActive }) =>
                         isActive ? activeStyle : notActiveStyle
                     }>
                     Manage Users
                 </NavLink>
-                <NavLink to='/manage-sellers'
+                <NavLink to='/sellers'
                     style={({ isActive }) =>
                         isActive ? activeStyle : notActiveStyle
                     }>
