@@ -84,7 +84,7 @@ const ViewTable = () => {
                                     <td >{user.birthDate}</td>
                                     <td>{user.email}</td>
                                     <td >{user.phoneNumber}</td>
-                                    <td>{user.address}</td>
+                                    <td>{`${user.address.country}, ${user.address.state}`}</td>
                                     <td>
                                         <BiEdit size='25px' onClick={() => {
                                             setIsEdit(true);
@@ -107,7 +107,7 @@ const ViewTable = () => {
             <Pagination totalUsers={totalUsers} currentPageNumber={currentPageNumber} setCurrentPageNumber={setCurrentPageNumber} />
 
             {isEdit && <EditDataModal setIsEdit={setIsEdit} user={selectedUser} />}
-            {isDelete && <DeleteModal setIsDelete={setIsDelete} user={selectedUser} />}
+            {isDelete && <DeleteModal setIsDelete={setIsDelete} user={selectedUser} currentUsers={currentUsers} setCurrentUsers={setCurrentUsers} />}
 
         </>
     );
