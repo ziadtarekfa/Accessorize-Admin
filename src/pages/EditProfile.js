@@ -53,7 +53,7 @@ const Profile = () => {
 
     const saveChanges = (e) => {
         e.preventDefault();
-        console.log(user);
+        setIsEditOpen(true);
         if (pathName.includes('sellers')) {
             fetch('http://localhost:8000/admin/updateSeller', {
                 method: "PUT",
@@ -179,15 +179,15 @@ const Profile = () => {
                         }}>Cancel</button>
                         <button className='save_button'>Save Changes</button>
                     </div>
-                    {
-                        isEditOpen && <EditModal setIsEditOpen={setIsEditOpen} />
-                    }
+
 
                 </form>
 
 
             }
-
+            {
+                isEditOpen && <EditModal setIsEditOpen={setIsEditOpen} />
+            }
 
 
         </main>
