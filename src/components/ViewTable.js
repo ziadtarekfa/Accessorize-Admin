@@ -16,7 +16,7 @@ const ViewTable = () => {
     const [currentPageNumber, setCurrentPageNumber] = useState(1);
     const [currentUsers, setCurrentUsers] = useState([]);
     const [loading, setLoading] = useState(true);
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const NO_OF_USERS_PER_PAGE = 5;
 
 
@@ -91,7 +91,13 @@ const ViewTable = () => {
                                                 <td>{`${user.address.country}, ${user.address.state}`}</td>
                                                 <td>
                                                     <BiEdit size='25px' onClick={() => {
-                                                        navigate(`/sellers/${user._id}`);
+                                                        if (window.location.pathname === "/sellers") {
+                                                            navigate(`/sellers/${user._id}`);
+                                                        }
+                                                        else {
+                                                            navigate(`/users/${user._id}`);
+                                                        }
+
                                                     }} />
                                                 </td>
                                                 <td>

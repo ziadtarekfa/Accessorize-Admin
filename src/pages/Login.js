@@ -6,7 +6,7 @@ const Login = () => {
 
     const emailRef = useRef();
     const passwordRef = useRef();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const signIn = (e) => {
         e.preventDefault();

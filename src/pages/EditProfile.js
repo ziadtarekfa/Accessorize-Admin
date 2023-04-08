@@ -1,7 +1,7 @@
 import '../pageStyles/editProfile.css';
 import Loading from '../components/Loading';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Profile = () => {
 
@@ -9,6 +9,7 @@ const Profile = () => {
     const pathName = window.location.pathname;
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -34,12 +35,13 @@ const Profile = () => {
             fetch('http://localhost:8000/admin/userId', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ Id: userId })
+                body: JSON.stringify({ Id: id })
             }).then((res) => {
                 return res.json();
             }).then((data) => {
                 console.log(data);
                 setUser(data);
+                setLoading(false);
             });
         }
 
@@ -147,7 +149,9 @@ const Profile = () => {
                         </div>
                         <div>
 
-                            <button className='cancel_button' type='reset'>Cancel</button>
+                            <button className='cancel_button' type='reset' onClick={() => {
+                                navigate(-1);
+                            }}>Cancel</button>
                             <button className='save_button'>Save Changes</button>
                         </div>
                     </form>

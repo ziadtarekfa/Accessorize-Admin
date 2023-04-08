@@ -13,7 +13,7 @@ const NotFound = () => {
 
         return () => instance.destroy()
     }, [])
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     return (
         <div className='not-found'>
             <div id='lottie-container' />

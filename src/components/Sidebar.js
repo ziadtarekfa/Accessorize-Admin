@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const activeStyle = {
         backgroundColor: "#323232"
     }
