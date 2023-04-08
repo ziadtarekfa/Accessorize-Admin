@@ -1,3 +1,15 @@
+.bg-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100vw;
+}
+
 .delete-modal {
     background-color: var(--secondaryColor);
     border-radius: 10px;
@@ -33,6 +45,15 @@
 .delete-cancel-container {
     display: flex;
     justify-content: end;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: 1px solid var(--lightGrayColor);
+    border-radius: 5px;
+    color: white;
+    margin-right: 20px;
+    width: 20%;
 }
 
 .delete-btn {

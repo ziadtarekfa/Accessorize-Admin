@@ -13,7 +13,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         if (email === 'test@gmail.com' && password === 'test') {
-            navigate('/manage-sellers');
+            navigate('/users');
         }
     }
 
