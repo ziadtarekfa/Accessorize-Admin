@@ -29,7 +29,7 @@
     flex-direction: column;
     height: 240px;
     width: 300px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding-top: 6%;
 }
 
@@ -38,6 +38,7 @@
     outline-color: var(--primaryColor);
     padding: 12px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 .sign_in_container input::placeholder {
@@ -51,4 +52,5 @@
     color: white;
     font-weight: bold;
     padding: 10px;
+    margin-top: 20px;
 }

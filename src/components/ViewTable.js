@@ -16,6 +16,7 @@ const ViewTable = () => {
     const [currentPageNumber, setCurrentPageNumber] = useState(1);
     const [currentUsers, setCurrentUsers] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [err, setError] = useState(null);
     const navigate = useNavigate();
     const NO_OF_USERS_PER_PAGE = 5;
 
@@ -32,6 +33,8 @@ const ViewTable = () => {
             setTotalUsers(data);
             setCurrentUsers(data.slice(indexOfFirstUser, indexOfLastUser));
             setLoading(false);
+        }).catch((err) => {
+            setError(err.message);
         });
 
     }, [currentPageNumber]);
@@ -50,6 +53,7 @@ const ViewTable = () => {
     return (
         <>
             {
+
                 loading ? <Loading /> :
                     <>
                         <div className='search-container'>

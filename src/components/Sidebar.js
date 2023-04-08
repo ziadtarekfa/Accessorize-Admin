@@ -12,7 +12,14 @@ const Sidebar = () => {
         backgroundColor: "transparent"
     }
     const logout = () => {
-        navigate('/');
+        fetch('http://localhost:8000/admin/logout').then((response) => {
+            if (response.ok) {
+                navigate('/');
+            }
+        }).catch((err) => {
+            alert(err.message);
+        });
+
     }
 
     return (
