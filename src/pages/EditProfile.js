@@ -3,6 +3,7 @@ import Loading from '../components/Loading';
 import NotFound from '../pages/NotFound';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import EditModal from '../components/EditModal';
 
 const Profile = () => {
 
@@ -11,6 +12,7 @@ const Profile = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [err, setError] = useState(null);
+    const [isEditOpen, setIsEditOpen] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -49,14 +51,35 @@ const Profile = () => {
     }, [id, pathName]);
 
 
-
     const saveChanges = (e) => {
         e.preventDefault();
         console.log(user);
+        if (pathName.includes('sellers')) {
+            fetch('http://localhost:8000/admin/updateSeller', {
+                method: "PUT",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(user)
+
+            }).then((res) => {
+                if (res.ok) {
+                    setIsEditOpen(true);
+                }
+            });
+        }
+        else {
+            fetch('http://localhost:8000/admin/updateUser', {
+                method: "PUT",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(user)
+            }).then((res) => {
+                if (res.ok) {
+                    setIsEditOpen(true);
+                }
+            });
+        }
     }
     return (
         <main className='home'>
-
             {loading && <Loading />}
             {err && <NotFound />}
             {user &&
@@ -156,7 +179,12 @@ const Profile = () => {
                         }}>Cancel</button>
                         <button className='save_button'>Save Changes</button>
                     </div>
+                    {
+                        isEditOpen && <EditModal setIsEditOpen={setIsEditOpen} />
+                    }
+
                 </form>
+
 
             }
 
