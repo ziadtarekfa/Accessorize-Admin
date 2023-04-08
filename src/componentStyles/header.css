@@ -3,8 +3,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid var(--darkGrayColor);
-    padding: 7px 7px 7px 22px;
-
+    padding: 8px 7px 8px 22px;
 }
 
 header svg {

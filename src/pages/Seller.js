@@ -31,7 +31,7 @@ const Seller = () => {
                     <NewStats text='New Sellers' quantity={recentSellersCount} />
                 </div>
                 <p>Sellers</p>
-                <ViewTable />
+                <ViewTable text={"sellers"} />
             </div>
 
         </div>

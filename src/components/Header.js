@@ -7,8 +7,6 @@ const Header = () => {
                 <Mirror fill='white' size='20px' />
                 <h2>Accessorize</h2>
             </div>
-            {/* name initials */}
-            <h1>ZT</h1>
 
         </header>
     );
