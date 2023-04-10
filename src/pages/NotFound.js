@@ -18,7 +18,7 @@ const NotFound = () => {
         <div className='not-found'>
             <div id='lottie-container' />
             <div>
-                <button onClick={() => { navigate('/') }}>Go Back To Home</button>
+                <button onClick={() => { navigate('/users') }}>Go Back To Home</button>
             </div>
         </div>
     );

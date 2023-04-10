@@ -18,7 +18,8 @@ const Login = () => {
         const response = await fetch("http://localhost:8000/admin/login", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(admin)
+            body: JSON.stringify(admin),
+            credentials: "include"
         });
         const data = await response.json();
         if (!response.ok) {

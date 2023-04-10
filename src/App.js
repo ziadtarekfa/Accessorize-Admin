@@ -5,24 +5,27 @@ import NotFound from './pages/NotFound';
 import Seller from './pages/Seller';
 import User from './pages/User';
 import EditProfile from './pages/EditProfile';
+import PrivateRoutes from './utils/PrivateRoutes';
+
 
 function App() {
+
   return (
-    <BrowserRouter>
+    < BrowserRouter >
       <div className="App">
-        <Routes>
-          <Route path='/' element={<Login />} />
-        </Routes>
         <Header />
         <Routes>
-          <Route path='/users/:id' element={<EditProfile />} />
-          <Route path='/sellers/:id' element={<EditProfile />} />
-          <Route path='/users' element={<User />} />
-          <Route path='/sellers' element={<Seller />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path='/' element={<Login />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path='/users/:id' element={<EditProfile />} />
+            <Route path='/sellers/:id' element={<EditProfile />} />
+            <Route path='/users' element={<User />} />
+            <Route path='/sellers' element={<Seller />} />
+            <Route path='*' element={<NotFound />} />
+          </Route>
         </Routes>
       </div>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 

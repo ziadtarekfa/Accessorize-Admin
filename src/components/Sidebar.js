@@ -12,7 +12,7 @@ const Sidebar = () => {
         backgroundColor: "transparent"
     }
     const logout = () => {
-        fetch('http://localhost:8000/admin/logout').then((response) => {
+        fetch('http://localhost:8000/admin/logout', { credentials: "include" }).then((response) => {
             if (response.ok) {
                 navigate('/');
             }

@@ -18,7 +18,6 @@ const Profile = () => {
     useEffect(() => {
 
         if (pathName.includes('sellers')) {
-            console.log("seller Path");
             fetch(`http://localhost:8000/admin/sellerId/${id}`)
                 .then((res) => {
                     if (!res.ok) {
