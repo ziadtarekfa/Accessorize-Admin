@@ -1,11 +1,11 @@
 
-# Acessorize Admin Module
+# Accessorize Admin Module
 
-Welcome to the Acessorize Admin Module repository! This repository contains the backend code for the admin module of the Acessorize project. The admin module primarily focuses on managing sellers, users, and providing business statistics for analysis.
+Welcome to the Accessorize Admin Module repository! This repository contains the backend code for the admin module of the Accessorize project. The admin module primarily focuses on managing sellers, users, and providing business statistics for analysis.
 
 ## Features
 
-The admin module of Acessorize provides the following key features:
+The admin module of Accessorize provides the following key features:
 
 - **Seller Management**: Admins can add, delete, and update sellers on the platform. This functionality allows for easy onboarding and maintenance of seller accounts.
 
@@ -15,11 +15,14 @@ The admin module of Acessorize provides the following key features:
 
 ## Technologies Used
 
-The Acessorize Admin Module leverages the following technologies:
-// Write it mister small
+The Accessorize Admin Module leverages the following technologies:
+* ReactJS
+* React Router
+* Express
+
 ## Getting Started
 
-To get started with the Acessorize Admin Module, follow these steps:
+To get started with the Accessorize Admin Module, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Install the required dependencies using `npm install`.
@@ -28,7 +31,7 @@ To get started with the Acessorize Admin Module, follow these steps:
 
 ## Contribution
 
-We welcome contributions to the Acessorize backend! 
+We welcome contributions to the Accessorize backend! 
 
 - Ziad Tarek
 - Nouran Ibrahim
