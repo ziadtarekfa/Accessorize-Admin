@@ -1,0 +1,56 @@
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondaryColor);
+    width: 25%;
+    height: 50%;
+    padding: 40px 20px 20px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+
+dialog::backdrop {
+    background: red;
+}
+
+
+dialog label {
+    color: gray;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+dialog input {
+    border-radius: 5px;
+    border-color: #797979;
+    border-style: solid;
+    border-width: 1px;
+    padding: 7px;
+    color: white;
+    margin-top: 5px;
+    height: 30px;
+    background-color: transparent
+}
+
+dialog h4 {
+    margin-top: 10px;
+    color: white;
+}
+
+dialog h2 {
+    color: white;
+}
+
+dialog .save_button {
+    width: 40%;
+}

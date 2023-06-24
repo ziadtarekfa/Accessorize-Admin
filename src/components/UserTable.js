@@ -1,10 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import { BiEdit } from 'react-icons/bi';
 import { GoTrashcan } from 'react-icons/go';
+import { useRef, useState } from 'react';
+import EditDialog from './EditDialog';
 
-const UserTable = ({ currentUsers, setIsDelete, setSelectedUser }) => {
+const UserTable = ({ currentUsers, setIsDelete, setSelectedUser, selectedUser }) => {
     const navigate = useNavigate();
+    const editDialog = useRef();
+    const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+    const [user, setUserToBe] = useState(null);
     return (
+        <>
         <table>
             <thead>
                 <tr>
@@ -16,6 +22,7 @@ const UserTable = ({ currentUsers, setIsDelete, setSelectedUser }) => {
             <tbody>
                 {
                     currentUsers.map((user) => {
+
                         return (
                             <tr key={user._id}>
 
@@ -25,8 +32,11 @@ const UserTable = ({ currentUsers, setIsDelete, setSelectedUser }) => {
                                 <td>
                                     {/* DIALOG WILL BE HERE */}
                                     <BiEdit size='25px' onClick={() => {
-                                        navigate(`/users/${user._id}`);
+                                        setIsEditDialogOpen(true);
+                                        setSelectedUser(user)
                                     }} />
+
+
                                 </td>
                                 <td>
                                     <GoTrashcan size='20px' onClick={() => {
@@ -37,10 +47,21 @@ const UserTable = ({ currentUsers, setIsDelete, setSelectedUser }) => {
 
                             </tr>
                         );
+
                     })
+
                 }
+            
+
             </tbody>
+
+
         </table>
+        
+            {
+                selectedUser && <EditDialog isEditDialogOpen={isEditDialogOpen} setIsEditDialogOpen={setIsEditDialogOpen} user={selectedUser} />
+            }
+        </>
     );
 }
 

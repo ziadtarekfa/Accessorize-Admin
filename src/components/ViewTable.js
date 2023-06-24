@@ -80,7 +80,7 @@ const ViewTable = ({ text }) => {
                 <>
                     {
                         window.location.pathname === '/users' ? <UserTable currentUsers={currentUsers} setIsDelete={setIsDelete}
-                            setSelectedUser={setSelectedUser} />
+                            setSelectedUser={setSelectedUser} selectedUser={selectedUser} />
                             : <SellerTable currentUsers={currentUsers} setIsDelete={setIsDelete} setSelectedUser={setSelectedUser} />
                     }
 
