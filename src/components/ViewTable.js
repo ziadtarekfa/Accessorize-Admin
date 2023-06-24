@@ -7,6 +7,8 @@ import DeleteModal from './DeleteModal';
 import Pagination from './Pagination';
 import { useNavigate } from 'react-router-dom';
 import Loading from './Loading';
+import UserTable from './UserTable';
+import SellerTable from './SellerTable';
 
 
 const ViewTable = ({ text }) => {
@@ -17,7 +19,6 @@ const ViewTable = ({ text }) => {
     const [currentUsers, setCurrentUsers] = useState(null);
     const [loading, setLoading] = useState(true);
     const [isEmptyList, setIsEmptyList] = useState(false);
-    const navigate = useNavigate();
     const NO_OF_USERS_PER_PAGE = 5;
 
 
@@ -60,12 +61,9 @@ const ViewTable = ({ text }) => {
         <>
             {loading && <Loading />}
             {isEmptyList && <div className='empty-list'>{`There are no current ${text}`}</div>}
-            {
-                currentUsers &&
 
-                <>
-                    <div className='search-container'>
-                        <input placeholder='Search using email address' onChange={(e) => {
+            <div className='search-container'>
+                {/* <input placeholder='Search using email address' onChange={(e) => {
                             if (e.target.value === "") {
                                 const indexOfLastUser = currentPageNumber * NO_OF_USERS_PER_PAGE;
                                 const indexOfFirstUser = indexOfLastUser - NO_OF_USERS_PER_PAGE;
@@ -73,60 +71,19 @@ const ViewTable = ({ text }) => {
                             }
                         }} ref={emailInputRef} type='email'></input>
                         <AiOutlineSearch fill='#757575' />
-                        <button onClick={() => searchUser()}>Search</button>
-                    </div>
+                        <button onClick={() => searchUser()}>Search</button> */}
+            </div>
 
+            {
+                currentUsers &&
 
+                <>
+                    {
+                        window.location.pathname === '/users' ? <UserTable currentUsers={currentUsers} setIsDelete={setIsDelete}
+                            setSelectedUser={setSelectedUser} />
+                            : <SellerTable currentUsers={currentUsers} setIsDelete={setIsDelete} setSelectedUser={setSelectedUser} />
+                    }
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Gender</th>
-                                <th>Birth Date</th>
-                                <th>Email</th>
-                                <th>Phone Number</th>
-                                <th>Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                currentUsers.map((user) => {
-                                    return (
-                                        <tr key={user._id}>
-
-                                            <td >{user.firstName}</td>
-                                            <td >{user.lastName}</td>
-                                            <td>{user.gender}</td>
-                                            <td >{user.birthDate}</td>
-                                            <td>{user.email}</td>
-                                            <td >{user.phoneNumber}</td>
-                                            <td>{`${user.address.country}, ${user.address.state}`}</td>
-                                            <td>
-                                                <BiEdit size='25px' onClick={() => {
-                                                    if (window.location.pathname === "/sellers") {
-                                                        navigate(`/sellers/${user._id}`);
-                                                    }
-                                                    else {
-                                                        navigate(`/users/${user._id}`);
-                                                    }
-
-                                                }} />
-                                            </td>
-                                            <td>
-                                                <GoTrashcan size='20px' onClick={() => {
-                                                    setIsDelete(true);
-                                                    setSelectedUser(user)
-                                                }} />
-                                            </td>
-
-                                        </tr>
-                                    );
-                                })
-                            }
-                        </tbody>
-                    </table>
 
                     <Pagination totalUsers={totalUsers} currentPageNumber={currentPageNumber} setCurrentPageNumber={setCurrentPageNumber} />
                     {

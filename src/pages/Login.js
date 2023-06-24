@@ -34,6 +34,13 @@ const Login = () => {
         <main className="sign_in">
             <div className="intro_text">
                 <h1>Sign In to <br /> admin accessorize</h1>
+                <p>
+                    Welcome to Accessorize, a leading company in the world of fashion accessories!
+                    As a trendsetter in the industry, Accessorize has been dedicated to bringing
+                    the latest and most stylish accessories since its establishment.
+                    With our passion for fashion and unwavering dedication to customer satisfaction,
+                    Accessorize is here to inspire, accessorize, and make a statement.
+                </p>
             </div>
 
             <form className="sign_in_container" onSubmit={signIn}>

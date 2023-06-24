@@ -5,14 +5,18 @@
     padding: 10%;
 }
 
+
 .sign_in .intro_text {
     padding-top: 5%;
+    width: 40%;
 }
 
-.sign_in .intro_text a {
-    color: var(--primaryColor);
-    font-weight: bold;
-    text-decoration: none;
+.sign_in .intro_text p {
+    padding-top: 5%;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #b0abab;
+
 }
 
 .sign_in img {
