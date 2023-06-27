@@ -37,6 +37,12 @@ const Sidebar = () => {
                     }>
                     Manage Sellers
                 </NavLink>
+                <NavLink to='/create-account'
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : notActiveStyle
+                    }>
+                    Create Admin
+                </NavLink>
             </div>
             <div className='logout-container' onClick={logout}>
                 <BiLogOut size='25px' />

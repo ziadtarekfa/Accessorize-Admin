@@ -1,0 +1,45 @@
+.create_account {
+    position: fixed;
+    justify-content: space-between;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    margin-left: 100px;
+    transform: translate(-50%, -50%);
+    height: 50%;
+    padding: 40px 20px 20px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.create_account img {
+    transform: scaleX(-1);
+    position: relative;
+    top: 35px;
+}
+
+.create_account .profile_form {
+    width: 370px;
+    margin-left: 200px;
+
+}
+
+.create_account .profile_form input {
+    outline: none;
+}
+
+.create_account h2,
+.create_account p {
+    text-align: center;
+}
+
+.create_account p {
+    font-size: 14px;
+    color: lightgray;
+    margin-top: 5px;
+}
+
+.create_account button {
+    width: 100%;
+
+}

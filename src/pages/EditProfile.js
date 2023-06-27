@@ -3,7 +3,7 @@ import Loading from '../components/Loading';
 import NotFound from '../pages/NotFound';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import EditModal from '../components/EditModal';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Profile = () => {
 
@@ -12,7 +12,6 @@ const Profile = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [err, setError] = useState(null);
-    const [isEditOpen, setIsEditOpen] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -52,7 +51,6 @@ const Profile = () => {
 
     const saveChanges = (e) => {
         e.preventDefault();
-        setIsEditOpen(true);
         if (pathName.includes('sellers')) {
             fetch('http://localhost:8000/admin/updateSeller', {
                 method: "PUT",
@@ -61,7 +59,13 @@ const Profile = () => {
 
             }).then((res) => {
                 if (res.ok) {
-                    setIsEditOpen(true);
+
+                    toast.info("Changes saved successfully", {
+                        position: 'top-right'
+                    });
+                    setTimeout(() => {
+                        navigate(-1);
+                    }, 2000);
                 }
             });
         }
@@ -72,7 +76,14 @@ const Profile = () => {
                 body: JSON.stringify(user)
             }).then((res) => {
                 if (res.ok) {
-                    setIsEditOpen(true);
+
+                    toast.info("Changes saved successfully", {
+                        position: 'top-right'
+                    });
+                    setTimeout(() => {
+                        navigate(-1);
+                    }, 2000);
+
                 }
             });
         }
@@ -184,11 +195,7 @@ const Profile = () => {
 
 
             }
-            {
-                isEditOpen && <EditModal setIsEditOpen={setIsEditOpen} />
-            }
-
-
+            <ToastContainer />
         </main>
 
     );

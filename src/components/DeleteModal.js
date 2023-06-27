@@ -1,3 +1,4 @@
+import { ToastContainer, toast } from 'react-toastify';
 import '../componentStyles/delete-modal.css';
 const DeleteModal = ({ setIsDelete, user, currentUsers, setCurrentUsers }) => {
 
@@ -13,6 +14,9 @@ const DeleteModal = ({ setIsDelete, user, currentUsers, setCurrentUsers }) => {
                     const index = currentUsers.findIndex((item) => item.email === user.email);
                     currentUsers.splice(index, 1);
                     setIsDelete(false);
+                    toast.info("Seller deleted successfully !", {
+                        position: 'top-right'
+                    });
                 });
         }
         else if (window.location.pathname === "/users") {
@@ -26,6 +30,9 @@ const DeleteModal = ({ setIsDelete, user, currentUsers, setCurrentUsers }) => {
                     const index = currentUsers.findIndex((item) => item.email === user.email);
                     currentUsers.splice(index, 1);
                     setIsDelete(false);
+                    toast.info("Customer deleted successfully !", {
+                        position: 'top-right'
+                    });
                 });
         }
 
@@ -41,6 +48,7 @@ const DeleteModal = ({ setIsDelete, user, currentUsers, setCurrentUsers }) => {
                     <button className="delete-btn" onClick={() => deleteUser()}>Delete</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }

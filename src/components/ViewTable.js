@@ -1,11 +1,8 @@
 import '../componentStyles/view-table.css';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { GoTrashcan } from 'react-icons/go';
-import { BiEdit } from 'react-icons/bi';
 import { useEffect, useState, useRef } from 'react';
 import DeleteModal from './DeleteModal';
 import Pagination from './Pagination';
-import { useNavigate } from 'react-router-dom';
 import Loading from './Loading';
 import UserTable from './UserTable';
 import SellerTable from './SellerTable';
@@ -47,14 +44,23 @@ const ViewTable = ({ text }) => {
     }, [currentPageNumber]);
 
 
-    const emailInputRef = useRef();
+    const searchRef = useRef();
 
     const searchUser = () => {
-        const email = emailInputRef.current.value;
-        const userFound = totalUsers.filter((user) => {
-            return user.email === email
-        });
-        setCurrentUsers(userFound);
+        if (searchRef.current.value === "") {
+            const indexOfLastUser = currentPageNumber * NO_OF_USERS_PER_PAGE;
+            const indexOfFirstUser = indexOfLastUser - NO_OF_USERS_PER_PAGE;
+            setCurrentUsers(totalUsers.slice(indexOfFirstUser, indexOfLastUser));
+        }
+        else {
+            const input = searchRef.current.value.toLowerCase();
+            const userFound = totalUsers.filter((user) => {
+                return user.email.trim().toLowerCase().includes(input) || user.firstName.trim().toLowerCase().includes(input)
+                    || user.lastName.trim().toLowerCase().includes(input) || user.phoneNumber.trim().toLowerCase().includes(input)
+            });
+            setCurrentUsers(userFound.slice(0, 4));
+        }
+
     }
 
     return (
@@ -63,15 +69,8 @@ const ViewTable = ({ text }) => {
             {isEmptyList && <div className='empty-list'>{`There are no current ${text}`}</div>}
 
             <div className='search-container'>
-                {/* <input placeholder='Search using email address' onChange={(e) => {
-                            if (e.target.value === "") {
-                                const indexOfLastUser = currentPageNumber * NO_OF_USERS_PER_PAGE;
-                                const indexOfFirstUser = indexOfLastUser - NO_OF_USERS_PER_PAGE;
-                                setCurrentUsers(totalUsers.slice(indexOfFirstUser, indexOfLastUser));
-                            }
-                        }} ref={emailInputRef} type='email'></input>
-                        <AiOutlineSearch fill='#757575' />
-                        <button onClick={() => searchUser()}>Search</button> */}
+                <input placeholder='Search using email address' onChange={searchUser} ref={searchRef} type='email'></input>
+                <AiOutlineSearch fill='#757575' />
             </div>
 
             {
