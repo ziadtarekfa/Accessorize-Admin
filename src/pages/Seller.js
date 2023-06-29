@@ -1,7 +1,7 @@
 import '../pageStyles/user.css';
 import Sidebar from '../components/Sidebar';
-import CurrentStats from '../components/CurrentStats';
-import NewStats from '../components/NewStats';
+import Card from '../components/Card';
+import { CHART_SVG, GROWING_CHART_SVG } from '../utils/constants';
 import ViewTable from '../components/ViewTable';
 import { useEffect, useState } from 'react';
 
@@ -26,12 +26,12 @@ const Seller = () => {
         <div className='container'>
             <Sidebar />
             <div className='user-content'>
-                <div className='user-stats'>
-                    <CurrentStats text='Current Sellers' quantity={currentSellersCount} />
-                    <NewStats text='New Sellers' quantity={recentSellersCount} />
+                <div className='cards_container'>
+                    <Card text='Current Sellers' quantity={currentSellersCount} svgIcon={CHART_SVG} color={'#E3F5FF'} />
+                    <Card text='New Sellers' quantity={recentSellersCount} svgIcon={GROWING_CHART_SVG} color={'#E5ECF6'} />
                 </div>
                 <p>Sellers</p>
-                <ViewTable text={"sellers"} />
+                <ViewTable userType={"sellers"} />
             </div>
 
         </div>

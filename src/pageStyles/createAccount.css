@@ -1,45 +1,38 @@
 .create_account {
-    position: fixed;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     display: flex;
-    top: 50%;
-    left: 50%;
-    margin-left: 100px;
-    transform: translate(-50%, -50%);
-    height: 50%;
-    padding: 40px 20px 20px 20px;
-    border-radius: 10px;
-    border: none;
+    width: 100%;
 }
 
 .create_account img {
     transform: scaleX(-1);
     position: relative;
-    top: 35px;
+    width: 35em;
 }
 
-.create_account .profile_form {
-    width: 370px;
-    margin-left: 200px;
-
+.create_account_form .flex_box_column {
+    margin-top: 15px;
 }
 
-.create_account .profile_form input {
-    outline: none;
+.create_account_form label {
+    color: gray;
+    font-weight: bold;
+    font-size: 12px;
 }
 
-.create_account h2,
-.create_account p {
+.create_account_form h2,
+.create_account_form p {
     text-align: center;
 }
 
-.create_account p {
+.create_account_form p {
     font-size: 14px;
     color: lightgray;
     margin-top: 5px;
 }
 
-.create_account button {
+.create_account_form button {
     width: 100%;
-
+    margin-top: 20px;
 }

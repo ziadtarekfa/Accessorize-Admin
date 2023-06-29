@@ -6,7 +6,7 @@ import Seller from './pages/Seller';
 import User from './pages/User';
 import EditProfile from './pages/EditProfile';
 import PrivateRoutes from './utils/PrivateRoutes';
-import CreateAdmin from './pages/CreateAdmin';
+import CreateAccount from './pages/CreateAccount';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -24,7 +24,7 @@ function App() {
             <Route path='/sellers/:id' element={<EditProfile />} />
             <Route path='/users' element={<User />} />
             <Route path='/sellers' element={<Seller />} />
-            <Route path='/create-account' element={<CreateAdmin />} />
+            <Route path='/create-account' element={<CreateAccount />} />
             <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>

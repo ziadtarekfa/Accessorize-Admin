@@ -1,4 +1,4 @@
-.users {
+.card {
     color: var(--primaryColor);
     border-radius: 10px;
     padding: 30px;
@@ -12,14 +12,5 @@
 
 .chart-container span {
     font-size: 30px;
-    margin: 15px 0 0 14px;
-}
-
-.current-users {
-    background-color: var(--primaryCardColor);
-}
-
-.new-users {
-    background-color: var(--secondaryCardColor);
-    margin-left: 40px;
+    margin: 15px 0 0 15px;
 }

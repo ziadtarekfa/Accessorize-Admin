@@ -7,7 +7,7 @@ const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const navigate = useNavigate();
-    const [err, setError] = useState(null);
+    const [loginError, setLoginError] = useState(null);
 
     const signIn = async (e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ const Login = () => {
         });
         const data = await response.json();
         if (!response.ok) {
-            setError(data.error);
+            setLoginError(data.error);
         }
         else {
             navigate('/users');
@@ -31,9 +31,10 @@ const Login = () => {
     }
 
     return (
-        <main className="sign_in">
+        <main className="login">
+
             <div className="intro_text">
-                <h1>Sign In to <br /> admin accessorize</h1>
+                <h1>Sign in to <br /> admin accessorize</h1>
                 <p>
                     Welcome to Accessorize, a leading company in the world of fashion accessories!
                     As a trendsetter in the industry, Accessorize has been dedicated to bringing
@@ -43,13 +44,12 @@ const Login = () => {
                 </p>
             </div>
 
-            <form className="sign_in_container" onSubmit={signIn}>
-                <input id="email_sign_in" type="email" placeholder="Enter Email" ref={emailRef} required></input>
-                <input id="password_sign_in" type="password" placeholder="Password" ref={passwordRef} required></input>
-                <button className="default_button">Sign In</button>
-                {err && <div style={{ "marginTop": 20, "color": "red" }}>{err}</div>}
+            <form className="login_container" onSubmit={signIn}>
+                <input id="email_login" type="email" placeholder="Enter Email" autoComplete="email" ref={emailRef} required></input>
+                <input id="password_login" type="password" placeholder="Password" autoComplete="current-password" ref={passwordRef} required></input>
+                <button className='default_button'>Sign In</button>
+                {loginError && <div className='login_error'>{loginError}</div>}
             </form>
-
 
         </main>
     );

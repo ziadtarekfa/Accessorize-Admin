@@ -1,14 +1,17 @@
-.user-stats {
-    display: flex;
-}
-
 .user-content {
     width: 100%;
     padding: 40px;
 }
 
-.user-stats+p {
-    color: white;
+.cards_container {
+    display: flex;
+}
+
+.cards_container>div:nth-child(2) {
+    margin-left: 20px;
+}
+
+.cards_container+p {
     font-size: 20px;
     margin-top: 20px;
 }

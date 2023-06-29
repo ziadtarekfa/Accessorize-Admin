@@ -1,9 +1,6 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-bottom: 2px solid var(--darkGrayColor);
-    padding: 8px 7px 8px 22px;
+    padding: 10px;
 }
 
 header svg {
@@ -14,9 +11,4 @@ header svg {
 .mirror-container {
     display: flex;
     align-items: flex-end;
-}
-
-header h1 {
-    letter-spacing: 2px;
-    margin-right: 22px;
 }

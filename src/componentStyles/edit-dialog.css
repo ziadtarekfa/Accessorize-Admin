@@ -18,11 +18,9 @@ dialog form {
     height: 100%;
 }
 
-
 dialog::backdrop {
-    background: red;
+    background-color: rgba(0, 0, 0, 0.7);
 }
-
 
 dialog label {
     color: gray;
@@ -30,16 +28,8 @@ dialog label {
     font-size: 12px;
 }
 
-dialog input {
-    border-radius: 5px;
-    border-color: #797979;
-    border-style: solid;
-    border-width: 1px;
-    padding: 7px;
+dialog h2 {
     color: white;
-    margin-top: 5px;
-    height: 30px;
-    background-color: transparent
 }
 
 dialog h4 {
@@ -47,10 +37,12 @@ dialog h4 {
     color: white;
 }
 
-dialog h2 {
-    color: white;
-}
-
 dialog .save_button {
     width: 40%;
+}
+
+dialog .btns_container {
+    justify-content: end;
+    display: flex;
+    align-items: center;
 }

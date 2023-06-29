@@ -1,60 +1,47 @@
-.sign_in {
+.login {
     display: flex;
     justify-content: space-between;
-    height: 100vh;
     padding: 10%;
 }
 
 
-.sign_in .intro_text {
+.login .intro_text {
     padding-top: 5%;
     width: 40%;
 }
 
-.sign_in .intro_text p {
-    padding-top: 5%;
+.login .intro_text p {
+    margin-top: 5%;
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #b0abab;
-
 }
 
-.sign_in img {
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    transform: rotate(-30deg);
-    right: 33%;
-    bottom: 15%;
-}
-
-.sign_in_container {
+.login_container {
     display: flex;
     flex-direction: column;
-    height: 240px;
-    width: 300px;
-    /* justify-content: space-between; */
-    padding-top: 6%;
+    width: 20em;
+    margin-top: 6%;
 }
 
-.sign_in_container input {
+.login_container input {
     border: none;
-    outline-color: var(--primaryColor);
     padding: 12px;
     border-radius: 5px;
     margin-top: 20px;
 }
 
-.sign_in_container input::placeholder {
+.login_container input::placeholder {
     color: #4F555A;
 }
 
-.sign_in_container button {
+.login_container button {
     background-color: #4461F2;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
     margin-top: 20px;
+}
+
+.login_error {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    color: red;
 }

@@ -1,42 +1,32 @@
-import { ToastContainer, toast } from 'react-toastify';
 import '../componentStyles/delete-modal.css';
-const DeleteModal = ({ setIsDelete, user, currentUsers, setCurrentUsers }) => {
+import { ToastContainer, toast } from 'react-toastify';
+const DeleteModal = ({ setIsDelete, user, currentUsers, userType }) => {
 
-    const deleteUser = () => {
-        if (window.location.pathname === "/sellers") {
-            fetch('http://localhost:8000/admin/deleteSeller',
-                {
-                    method: 'DELETE',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: user.email })
-                })
-                .then((_res) => {
-                    const index = currentUsers.findIndex((item) => item.email === user.email);
-                    currentUsers.splice(index, 1);
-                    setIsDelete(false);
-                    toast.info("Seller deleted successfully !", {
-                        position: 'top-right'
-                    });
-                });
+    const deleteUser = async () => {
+        let deletePath;
+        if (userType === 'customers') {
+            deletePath = 'http://localhost:8000/admin/deleteUser';
         }
-        else if (window.location.pathname === "/users") {
-            fetch('http://localhost:8000/admin/deleteUser',
-                {
-                    method: 'DELETE',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: user.email })
-                })
-                .then((_res) => {
-                    const index = currentUsers.findIndex((item) => item.email === user.email);
-                    currentUsers.splice(index, 1);
-                    setIsDelete(false);
-                    toast.info("Customer deleted successfully !", {
-                        position: 'top-right'
-                    });
-                });
+        else {
+            deletePath = 'http://localhost:8000/admin/deleteSeller';
         }
 
+        const response = await fetch(deletePath, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: user.email })
+        });
+
+        if (response.ok) {
+            const index = currentUsers.findIndex((item) => item.email === user.email);
+            currentUsers.splice(index, 1);
+            setIsDelete(false);
+            toast.info("Successful Deletion !", {
+                position: 'top-right'
+            });
+        }
     }
+
     return (
         <div className='bg-dark'>
             <div className='delete-modal'>

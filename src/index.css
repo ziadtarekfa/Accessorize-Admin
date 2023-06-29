@@ -24,8 +24,47 @@ button:hover {
 }
 
 .container {
-
   display: flex;
   height: calc(100vh - 66px);
+}
 
+.default_button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+.default_input {
+  border: 1px solid #797979;
+  border-radius: 5px;
+  padding: 7px;
+  color: white;
+  margin-top: 5px;
+  background-color: transparent
+}
+
+.save_button {
+  background-color: #4461F2;
+  width: 30%;
+  height: 33px;
+}
+
+.cancel_button {
+  background-color: #FDFDFD;
+  border-radius: 5px;
+  color: var(--primaryColor);
+  width: 20%;
+  margin-right: 7px;
+  height: 33px;
+}
+
+.flex_box_row {
+  display: flex;
+}
+
+.flex_box_column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

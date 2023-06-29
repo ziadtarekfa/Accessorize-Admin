@@ -20,7 +20,6 @@ const UserTable = ({ currentUsers, setIsDelete, setSelectedUser, selectedUser })
                 <tbody>
                     {
                         currentUsers.map((user) => {
-
                             return (
                                 <tr key={user._id}>
 
@@ -37,12 +36,12 @@ const UserTable = ({ currentUsers, setIsDelete, setSelectedUser, selectedUser })
                                         <GoTrashcan size='20px' onClick={() => {
                                             setIsDelete(true);
                                             setSelectedUser(user)
+
                                         }} />
                                     </td>
 
                                 </tr>
                             );
-
                         })
 
                     }
