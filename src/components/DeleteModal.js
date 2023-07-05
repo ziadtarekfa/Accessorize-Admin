@@ -1,5 +1,5 @@
 import '../componentStyles/delete-modal.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 const DeleteModal = ({ setIsDelete, user, currentUsers, userType }) => {
 
     const deleteUser = async () => {
@@ -21,7 +21,7 @@ const DeleteModal = ({ setIsDelete, user, currentUsers, userType }) => {
             const index = currentUsers.findIndex((item) => item.email === user.email);
             currentUsers.splice(index, 1);
             setIsDelete(false);
-            toast.info("Successful Deletion !", {
+            toast.success("Successful Deletion !", {
                 position: 'top-right'
             });
         }
@@ -38,7 +38,6 @@ const DeleteModal = ({ setIsDelete, user, currentUsers, userType }) => {
                     <button className="delete-btn" onClick={() => deleteUser()}>Delete</button>
                 </div>
             </div>
-            <ToastContainer />
         </div>
     );
 }

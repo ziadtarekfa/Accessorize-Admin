@@ -1,7 +1,7 @@
 import '../componentStyles/sidebar.css';
 import { BiLogOut } from 'react-icons/bi'
 import { NavLink, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const Sidebar = () => {
 
@@ -26,36 +26,35 @@ const Sidebar = () => {
     }
 
     return (
-        <>
-            <aside>
-                <div className='manage-container'>
-                    <NavLink to='/users'
-                        style={({ isActive }) =>
-                            isActive ? activeStyle : notActiveStyle
-                        }>
-                        Customers
-                    </NavLink>
-                    <NavLink to='/sellers'
-                        style={({ isActive }) =>
-                            isActive ? activeStyle : notActiveStyle
-                        }>
-                        Sellers
-                    </NavLink>
-                    <NavLink to='/create-account'
-                        style={({ isActive }) =>
-                            isActive ? activeStyle : notActiveStyle
-                        }>
-                        Create Admin
-                    </NavLink>
-                </div>
-                <div className='logout-container' onClick={logout}>
-                    <BiLogOut size='25px' />
-                    <button>Logout</button>
-                </div>
+        <aside>
+            <div className='manage-container'>
+                <NavLink to='/users'
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : notActiveStyle
+                    }>
+                    Customers
+                </NavLink>
+                <NavLink to='/sellers'
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : notActiveStyle
+                    }>
+                    Sellers
+                </NavLink>
+                <NavLink to='/create-account'
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : notActiveStyle
+                    }>
+                    Create Admin
+                </NavLink>
+            </div>
+            <div className='logout-container' onClick={logout}>
+                <BiLogOut size='25px' />
+                <button>Logout</button>
+            </div>
 
-            </aside>
-            <ToastContainer />
-        </>
+        </aside>
+
+
 
     );
 }

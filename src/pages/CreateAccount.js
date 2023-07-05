@@ -1,6 +1,6 @@
 import '../pageStyles/createAccount.css';
 import { useRef } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import signUp from '../assets/undraw_sign_up_n6im.svg';
 
@@ -84,7 +84,6 @@ const CreateAccount = () => {
                 </form>
 
             </div>
-            <ToastContainer />
         </div>
     );
 }

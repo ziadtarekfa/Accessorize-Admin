@@ -8,6 +8,7 @@ import EditProfile from './pages/EditProfile';
 import PrivateRoutes from './utils/PrivateRoutes';
 import CreateAccount from './pages/CreateAccount';
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -29,6 +30,7 @@ function App() {
           </Route>
         </Routes>
       </div>
+      <ToastContainer />
     </BrowserRouter >
   );
 }

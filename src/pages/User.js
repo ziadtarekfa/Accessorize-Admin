@@ -4,7 +4,7 @@ import Card from '../components/Card';
 import ViewTable from '../components/ViewTable';
 import { CHART_SVG, GROWING_CHART_SVG } from '../utils/constants';
 import { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
 const User = () => {
@@ -45,7 +45,6 @@ const User = () => {
                 <ViewTable userType={"customers"} />
 
             </div>
-            <ToastContainer />
 
         </div>
     );

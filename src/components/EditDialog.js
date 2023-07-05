@@ -1,6 +1,6 @@
 import '../componentStyles/edit-dialog.css';
 import { useEffect, useRef } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 
 const EditDialog = ({ user, isEditDialogOpen, setIsEditDialogOpen }) => {
 
@@ -25,7 +25,7 @@ const EditDialog = ({ user, isEditDialogOpen, setIsEditDialogOpen }) => {
             body: JSON.stringify(user)
         }).then((res) => {
             if (res.ok) {
-                toast.info("Changes saved successfully !", {
+                toast.success("Changes saved successfully !", {
                     position: toast.POSITION.TOP_RIGHT
                 });
             }
@@ -33,7 +33,7 @@ const EditDialog = ({ user, isEditDialogOpen, setIsEditDialogOpen }) => {
 
     }
     return (
-        <>
+    
             <dialog ref={editDialog}>
                 <form  >
 
@@ -68,8 +68,8 @@ const EditDialog = ({ user, isEditDialogOpen, setIsEditDialogOpen }) => {
 
                 </form>
             </dialog>
-            <ToastContainer />
-        </>
+     
+      
     );
 }
 

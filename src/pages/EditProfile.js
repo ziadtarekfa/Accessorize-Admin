@@ -3,7 +3,7 @@ import Loading from '../components/Loading';
 import NotFound from '../pages/NotFound';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const Profile = () => {
 
@@ -39,12 +39,9 @@ const Profile = () => {
             body: JSON.stringify(user)
         }).then((res) => {
             if (res.ok) {
-                toast.info("Changes saved successfully", {
+                toast.success("Changes saved successfully", {
                     position: 'top-right'
                 });
-                setTimeout(() => {
-                    navigate(-1);
-                }, 2000);
             }
         });
     }
@@ -153,7 +150,6 @@ const Profile = () => {
                 </form>
 
             }
-            <ToastContainer />
         </main>
 
     );
