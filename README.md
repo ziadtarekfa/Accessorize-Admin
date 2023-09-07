@@ -1,19 +1,19 @@
 
 # Accessorize Admin Module
 
-Welcome to the Accessorize Admin Module repository! This repository contains the backend code for the admin module of the Accessorize project. The admin module primarily focuses on managing sellers, users, and providing business statistics for analysis.
+Welcome to the Accessorize Admin Module repository! This repository contains the frontend code for the admin module of the Accessorize e-commerce project. The admin module primarily focuses on managing sellers, users, and providing business statistics for analysis.
 
 ## Features
 
 The admin module of Accessorize provides the following key features:
 
-- **Seller Management**: Admins can add, delete, and update sellers on the platform. This functionality allows for easy onboarding and maintenance of seller accounts.
+- **Seller Management**: Admins can delete sellers' accounts, and update sellers' information on the platform. This functionality allows for easy onboarding and maintenance of seller accounts.
 
-- **User Management**: Admins have the ability to manage user accounts and roles. They can perform operations such as creating new accounts, modifying user details, and handling user permissions.
+- **Customer Management**: Admins have the ability to manage customers' accounts, such as modifying customer details.
 
-- **Business Statistics**: The admin module provides insights and statistics related to business performance. Admins can access sales data, analyze user behavior, and generate reports for decision-making purposes.
+- **Business Statistics**: The admin module provides insights and statistics related to business performance such as the number of customers and sellers.
 
-## Technologies Used
+## Tech Stack
 
 The Accessorize Admin Module leverages the following technologies:
 * ReactJS
@@ -29,7 +29,7 @@ To get started with the Accessorize Admin Module, follow these steps:
 3. Run the server using `npm start`.
 
 
-## Contribution
+## Contributions
 
 We welcome contributions to the Accessorize backend! 
 
